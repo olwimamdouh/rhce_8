@@ -1,0 +1,17 @@
+---
+- name: Create user with password
+  hosts:  all
+  vars_files:
+    - vars/my_pswd.yaml
+  tasks:
+    - name: Creating the user and set password
+      user:
+        name: "{{item}}"
+        password: "{{ my_paswd | password_hash('sha512') }}"
+        shell: /bin/sh
+        update_password: on_create
+      loop:
+        - alice
+        - emad
+        - salah
+        - khalid
