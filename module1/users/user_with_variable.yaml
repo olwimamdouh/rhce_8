@@ -1,0 +1,13 @@
+---
+- name: Creating user using Variable
+  hosts:  all
+  vars:
+    - user: lisa
+    - cmnt: Lisa John
+    - grp:  wheel
+  tasks:
+    - name: Creating the user
+      user:
+        name: "{{user}}"
+        comment:  "{{cmnt}}"
+        group:  "{{grp}}"
