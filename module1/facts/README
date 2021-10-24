@@ -1,0 +1,12 @@
+Ansible Facts are variable automatically set or discoverd by Ansible on managed nodes. they contain info about the hosts.
+
+## on Ad Hoc we use setup module
+## on a Playbook we use debug modeule with var argument
+
+## Note >> Don't user curly brackets with the fact into the playbook
+
+
+-  debug:
+    var: ANSIBLE_FACE
+
+
