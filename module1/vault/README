@@ -1,0 +1,13 @@
+Using Ansible Vault
+
+## Create the playbook with varaible files which contain user and password hash >> user_with_passwd.yml
+
+## create varaible file with ansible-vault create secret.yml, with all vairables you want.
+
+for password hash I used this python library 
+
+python -c 'import crypt; print crypt.crypt("password", "$1$SomeSalt$")'
+
+## create a vault file to store password for secret.yml, so you won't get a prompt to enter your password
+
+## run ansible-playbook and watch it

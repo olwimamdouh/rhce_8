@@ -1,0 +1,15 @@
+---
+- name: Adding records to hosts file
+  hosts:  all
+  tasks:
+    - name: Adding records
+      lineinfile:
+        path: /etc/hosts
+        line: "{{item}}"
+        state:  present
+      with_items:
+        - 172.25.250.10 controller controller.example.com
+        - 172.25.250.11 ansible1 ansible1.example.com
+        - 172.25.250.12 ansible2 ansible1.example.com
+        - 172.25.250.13 ansible3 ansible1.example.com
+        - 172.25.250.14 ansible4 ansible1.example.com

@@ -1,0 +1,39 @@
+---
+- name: Web Server Installation
+  hosts:  ansible1
+  tasks:
+    - name: Install HTTPD and Firewalld
+      yum:
+        name:
+          - firewalld
+          - httpd
+        state: latest
+    - name: Enable HTTPD service
+      service:
+        name: httpd
+        state:  started
+        enabled:  true
+    - name: Copying file
+      copy: 
+        content:  "Hello world"
+        dest: /var/www/html/index.html
+    - name: Enable Firewalld service
+      service:
+        name: firewalld
+        state:  started
+        enabled:  yes
+    - name: Enable HTTPD traffic
+      firewalld:
+        service:  http
+        permanent:  true
+        immediate:  yes
+        state:  enabled
+- name: Testing web server
+  hosts:  localhost
+  become: no
+  tasks:
+    - name: Testing web server
+      uri:
+        url: http://ansible1.example.com
+        return_content: yes
+        status_code:  200

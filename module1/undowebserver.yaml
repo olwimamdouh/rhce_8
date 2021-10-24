@@ -1,0 +1,15 @@
+---
+- name: Undo Webserver
+  hosts:  ansible1
+  tasks:
+    - name: Delete services
+      yum:
+        name:
+          - httpd
+          - firewalld
+        state:  absent
+    - name: Delete file
+      file:
+        dest: /var/www/htm/index.html
+        state:  absent
+

@@ -1,0 +1,10 @@
+---
+- name: Removing hosts file records
+  hosts:  all
+  tasks:  
+    - name: Removing records
+      lineinfile:
+        path: /etc/hosts
+        regex:  '^172.25.250*'
+        state:  absent
+

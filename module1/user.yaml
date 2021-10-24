@@ -1,0 +1,10 @@
+---
+- name: Create User
+  hosts:  all
+  tasks:
+    - name: Create user 
+      user:
+        name: johnd
+        comment: John Doe
+        uid: 1040
+        group: wheel

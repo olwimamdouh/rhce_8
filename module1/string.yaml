@@ -1,0 +1,15 @@
+---
+- name: Copying a multiple string to a file
+  hosts:  all
+  tasks:
+  - name: Copying long string
+    copy:
+      content:  "{{item}}"
+      dest: /var/testing
+    #with_items: > In case you need to combine all lines into one line.
+    #with_items: | In case you need to print it as below.
+    with_items: >
+      This is an example
+      of long string,
+      that will become
+      a single sentance once.
