@@ -1,0 +1,8 @@
+---
+- name: Print an Ansible Fact
+  hosts:  all
+  tasks:
+    - name: Printing the values
+      debug:
+        msg: >
+          System {{ inventory_hostname }} has gateway {{ ansible_default_ipv4.gateway }}

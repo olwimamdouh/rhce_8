@@ -3,10 +3,15 @@ Ansible Facts are variable automatically set or discoverd by Ansible on managed 
 ## on Ad Hoc we use setup module
 ## on a Playbook we use debug modeule with var argument
 
-## Note >> Don't user curly brackets with the fact into the playbook
+## Note >> Don't user curly braces with the fact into the playbook
 
 
 -  debug:
     var: ANSIBLE_FACE
 
 
+## Note >> Use curly baraces with the fact into the playbook when you use "msg" argument
+
+-  debug:
+    msg: >
+      System {{ inventory_hostname }} has uuid {{ ansible_product_uuid }}
