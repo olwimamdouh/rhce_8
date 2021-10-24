@@ -1,0 +1,10 @@
+---
+- name: Show list using  dictonary
+  hosts:  all
+  vars_files:
+    - vars/user-dictonary
+  tasks:
+    - name: Print the users
+      debug:
+        msg: "User {{ users.leo.username }} has homedirecotry {{ users.leo.homedir }} and shell {{ users.leo.shell }}"
+

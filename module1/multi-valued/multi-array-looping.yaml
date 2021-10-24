@@ -1,0 +1,14 @@
+---
+- name: Show list using  arry
+  hosts:  ansible1
+  vars_files:
+    - vars/user-list
+  tasks:
+    - name: Print the users
+      debug:
+        msg: "User {{ item.username }} has homedirecotry {{ item.homedir }} and shell {{ item.shell }}"
+      loop: "{{users}}"
+    - name: Print the 1st value of array
+      debug:
+        msg: User {{ users[0] }} is the second of the list
+
