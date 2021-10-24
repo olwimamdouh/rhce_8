@@ -7,11 +7,11 @@ Ansible Facts are variable automatically set or discoverd by Ansible on managed 
 
 
 -  debug:
-    var: ANSIBLE_FACE
+     var: ANSIBLE_FACE
 
 
 ## Note >> Use curly baraces with the fact into the playbook when you use "msg" argument
 
 -  debug:
-    msg: >
+     msg: >
       System {{ inventory_hostname }} has uuid {{ ansible_product_uuid }}
