@@ -1,0 +1,7 @@
+---
+- name: Print machine ID through fact
+  hosts:  all
+  tasks:
+    - name:
+      debug:
+        var: ansible_machine_id
