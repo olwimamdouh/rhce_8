@@ -1,0 +1,8 @@
+---
+- name: Print some Ansible facts
+  hosts:  all
+  tasks:
+    - name: Print FQDN and IPv4 address
+      debug:
+        msg: > 
+          The default gateway  of {{ansible_facts.fqdn}} is {{ansible_facts['default_ipv4']['gateway']}}
