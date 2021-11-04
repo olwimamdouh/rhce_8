@@ -1,0 +1,9 @@
+---
+- name: Print machine ID through fact
+  hosts:  all
+  gather_facts: yes
+  tasks:
+    - name: print mount points
+      debug:
+        msg:  ""{{ ansible_mounts }}" and "{{ item.mount }}""
+

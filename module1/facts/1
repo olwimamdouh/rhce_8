@@ -1,7 +1,9 @@
 ---
 - name: Print machine ID through fact
   hosts:  all
+  gather_facts: no
   tasks:
     - name:
       debug:
-        var: ansible_facts
+        msg:  >
+          System {{ inventory_hostname }} has MAC 
