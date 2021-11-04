@@ -1,0 +1,15 @@
+---
+- name: Stopping Gathering facts
+  hosts:  all
+  gather_facts: no
+  tasks:
+    - name: Chcecking SSH service
+      service:
+        name: sshd
+        state:  reloaded
+    - name: Gathering facts MANUALLY
+      setup:
+    - name: Checking chrony service
+      service:
+        name: chronyc
+        state: restarted
