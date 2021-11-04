@@ -1,0 +1,8 @@
+---
+- name: Testing YAML
+  hosts:  all
+  tasks:  
+    - name: check ssh service
+      service:
+        name: sshd
+        state:  restarted
