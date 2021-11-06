@@ -1,0 +1,6 @@
+## This is a student book lab
+[general]
+pkg = httpd
+service = httpd
+status = started
+enabled = true

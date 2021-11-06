@@ -1,0 +1,8 @@
+---
+- name: Uninstall HTTP service
+  hosts:  all
+  tasks:
+    - name: Purge the httpd service
+      yum:
+        name: "{{ansible_facts.ansible_local['custom']['general']['pkg']}}"
+        state:  absent
