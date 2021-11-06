@@ -1,0 +1,9 @@
+## This is a static file in INI format for a local facts
+
+[packages]
+web_pkg = httpd
+db_pkg = mariadb-server
+
+[users]
+user1 = joe
+user2 = jane

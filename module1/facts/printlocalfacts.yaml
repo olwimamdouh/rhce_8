@@ -1,0 +1,8 @@
+---
+- name: Print local facts
+  hosts:  all
+  tasks:
+    - name: Print local facts on all targets
+      debug:
+        msg:  |
+          The pacakge to be installed on {{ansible_facts.fqdn}} is {{ansible_facts.ansible_local['customfacts']['packages']['web_pkg']}} and it's owned by {{ansible_facts.ansible_local['customfacts']['users']['user2']}}

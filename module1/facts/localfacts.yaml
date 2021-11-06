@@ -1,0 +1,16 @@
+---
+- name: Custom facts
+  hosts:  all
+  vars:
+    remote_dir: /etc/ansible/facts.d
+    facts_file: customfacts.fact
+  tasks:
+    - name: create the directory for local facts
+      file:
+        path: "{{remote_dir}}"
+        state:  directory
+        mode: '0755'
+    - name: copy the custom facts file to targets
+      copy:
+        src:  "{{facts_file}}"
+        dest:  "{{remote_dir}}"
